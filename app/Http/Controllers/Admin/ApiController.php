@@ -51,11 +51,12 @@ class ApiController extends Controller{
                 return redirect()->route('admin.api');
             }
 
-            $this->errorSave();
+            return $this->errorSave();
+        
         }catch(\Exception $e){
-            $this->errorSave($e->getMessage());
+            return $this->errorSave($e->getMessage());
         }catch(\FatalErrorException $e){
-            $this->errorSave($e->getMessage());
+            return $this->errorSave($e->getMessage());
         }
     }
 
